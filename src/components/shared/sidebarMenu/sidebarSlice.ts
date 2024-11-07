@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../../../store";
-import { MenuTree } from "./SidebarMenu";
+// import { MenuTree } from "./SidebarMenu";
 
 interface IMenuTreeState {
   id: number | string;
@@ -20,28 +20,29 @@ export type MenuTreeState = IMenuTreeState;
 export type MenuTreeFullState = IMenuTreeFullState;
 
 const menuState = (
-  menuTree: MenuTree[],
+  menuTree: [],
   currentOpenRef: MenuTreeFullState
 ): MenuTreeState[] => {
   const result: MenuTreeState[] = [];
   menuTree.forEach((val) => {
-    const newMenuState: MenuTreeState = {
-      id: val.id,
-      rootId: `${val.selfId}`,
-      expanded: val.expanded ? val.expanded : false,
-      selected: val.selected ? val.selected : false,
-      alwayExpand: val.alwayExpand,
-      child: val.child ? menuState(val.child, currentOpenRef) : [],
-    };
-    if (
-      val.selected &&
-      val.selected === true &&
-      currentOpenRef.currentOpen === ""
-    ) {
-      currentOpenRef.currentOpen = val.id;
-    } else {
-      newMenuState.selected = false;
-    }
+    const newMenuState: MenuTreeState = {}
+    //  {
+    //   id: val.id,
+    //   rootId: `${val.selfId}`,
+    //   expanded: val.expanded ? val.expanded : false,
+    //   selected: val.selected ? val.selected : false,
+    //   alwayExpand: val.alwayExpand,
+    //   child: val.child ? menuState(val.child, currentOpenRef) : [],
+    // };
+    // if (
+    //   val.selected &&
+    //   val.selected === true &&
+    //   currentOpenRef.currentOpen === ""
+    // ) {
+    //   currentOpenRef.currentOpen = val.id;
+    // } else {
+    //   newMenuState.selected = false;
+    // }
 
     result.push(newMenuState);
   });
@@ -164,7 +165,7 @@ const sidebarSlice = createSlice({
     onMenuTreeItemSelected(state, action: PayloadAction<string>) {
       const idArr = action.payload.split("/"); //Khi một Item trên Menu được chọn ta lấy "Id Đường Dẫn" đến Item đó trong Menu
       const currentIdArr = state.currentOpen.split("/"); //"Id Đường Dẫn" của một Item đang được chọn trong Menu
-      let remainIdArr: string[] = []; //Chứa Id của Menu Item cần "Co Lại" hoặc "Bỏ Chọn" khi một Menu Item khác được chọn,
+      const remainIdArr: string[] = []; //Chứa Id của Menu Item cần "Co Lại" hoặc "Bỏ Chọn" khi một Menu Item khác được chọn,
 
       currentIdArr.forEach((val) => {
         if (!idArr.includes(val)) {
