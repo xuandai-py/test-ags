@@ -8,12 +8,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { CSSProperties, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import cloud from "../../../../assets/clouds_3.png";
-import iata from "../../../../assets/iata-2.png";
-import isago from "../../../../assets/isago.png";
-import iso from "../../../../assets/iso.jpg";
-import logo_avi from "../../../../assets/logo_avi.png";
-import plane from "../../../../assets/plain_plane.png";
+
 import { useAppSelector } from "../../../../hooks";
 import useRootLanguage from "../../../../hooks/useRootLanguage";
 import { rootLangIdSelector } from "../../pages/rootSlice";
@@ -79,21 +74,7 @@ const Footer = () => {
               // height: "60px",
             }}
           >
-            <img
-              className=""
-              src={logo_avi}
-              alt="ags-logo"
-              color="#000"
-              // height="100%"
-              // width="auto"
-              height="auto"
-              style={{
-                maxHeight: "80px",
-                maxWidth: "100%",
-
-                objectFit: "contain",
-              }}
-            />
+            logo
             <Cert
               style={{
                 height: {
@@ -183,19 +164,7 @@ const Footer = () => {
                 filter: "brightness(0) invert(1) opacity(0.3)",
               }}
             >
-              <figure className="footer-fly-img">
-                <img
-                  src={cloud}
-                  alt="plain_clouds"
-                  // className="img-fade fade-in-right"
-                  loading="lazy"
-                  // width="647"
-                  // min-height="187"
-                  width="80%"
-                  height="auto"
-                  // sizes="(max-width: 900px) 100vw, 900px"
-                />
-              </figure>
+              <figure className="footer-fly-img">aaa</figure>
             </div>
 
             <Stack
@@ -305,20 +274,7 @@ const Footer = () => {
                 data-aos-once="false"
                 data-aos-offset="150"
               >
-                <figure className="footer-fly-img">
-                  <img
-                    // src="./vna4-min.png"
-                    src={plane}
-                    alt="plain_plane"
-                    // className="img-fade fade-in-right"
-                    loading="lazy"
-                    // width="647"
-                    // min-height="187"
-                    width="90%"
-                    height="auto"
-                    // sizes="(max-width: 900px) 100vw, 900px"
-                  />
-                </figure>
+                <figure className="footer-fly-img">plane</figure>
               </div>
             </Stack>
           </Stack>
@@ -358,33 +314,7 @@ export const Cert = ({
         ...style,
       }}
     >
-      <img
-        className="cert-img cert-isago"
-        loading="lazy"
-        src={isago}
-        alt="isago"
-        // height="100%"
-        // width="auto"
-        style={{ objectFit: "contain" }}
-      />
-      <img
-        className="cert-img cert-iata"
-        loading="lazy"
-        src={iata}
-        alt="iata"
-        // height="100%"
-        // width="auto"
-        style={{ objectFit: "contain" }}
-      />
-      <img
-        className="cert-img cert-iso"
-        loading="lazy"
-        src={iso}
-        alt="iata"
-        // height="100%"
-        // width="auto"
-        style={{ objectFit: "contain" }}
-      />
+      cert
     </Stack>
   );
 };

@@ -18,8 +18,7 @@ import TopContent from "./TopContent";
 
 import PublicOutlinedIcon from "@mui/icons-material/PublicOutlined";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import logo_ags_white from "../../../../assets/images/logo_ags.png";
-import logo_ags from "../../../../assets/images/logo_ags2.png";
+
 import { useAppDispatch, useAppSelector } from "../../../../hooks";
 import useRootLanguage from "../../../../hooks/useRootLanguage";
 import {
@@ -139,19 +138,7 @@ const DesktopStaticNavbar = () => {
             paddingBottom: "10px",
           }}
         >
-          <Link to={`${location.pathname}`}>
-            <img
-              className="index-logo"
-              src={logo_ags_white}
-              alt="ags_logo"
-              height="100%"
-              width="auto"
-              style={{
-                maxWidth: "150px",
-                maxHeight: "60px",
-              }}
-            />
-          </Link>
+          <Link to={`${location.pathname}`}>aaa</Link>
 
           <Cert
             className="cert-large"
@@ -310,7 +297,7 @@ const DesktopScrolledNavbar = () => {
             height="auto"
             duration={0}
           ></Image> */}
-          <img src={logo_ags} alt="ags_logo" width="80px" height="auto" />
+          logo
         </Link>
 
         <nav>
@@ -534,12 +521,7 @@ const MobileNavbarBT = () => {
           }}
         >
           <a href="/" onClick={onLogoEditClick}>
-            <img
-              id="index-logo-mobile"
-              src={logo_ags_white}
-              alt="ags_logo"
-              height="auto"
-            />
+            logo
           </a>
         </AccordionSummary>
         <AccordionDetails
