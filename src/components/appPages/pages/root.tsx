@@ -5,9 +5,13 @@ import { useAppDispatch } from "../../../hooks";
 // import Fabs from "../components/common/Fabs";
 // import Footer from "../components/common/Footer";
 // import Header from "../components/common/Header";
-import { rootLangIdSetted } from "./rootSlice";
+import { CssBaseline } from "@mui/material";
 import { Helmet } from "react-helmet";
 import useRootLanguage from "../../../hooks/useRootLanguage";
+import Fabs from "../components/common/Fabs";
+import Footer from "../components/common/Footer";
+import Header from "../components/common/Header";
+import { rootLangIdSetted } from "./rootSlice";
 interface IRootProps {
   langId: number;
 }
@@ -24,8 +28,8 @@ const Root = ({ langId }: IRootProps) => {
     <div className="ags-layout">
       {rootLang && (
         <Helmet>
-        <script type="application/ld+json">
-          {`
+          <script type="application/ld+json">
+            {`
               {
                 "@context":"https://schema.org",
                 "@type":"Organization",
@@ -39,25 +43,25 @@ const Root = ({ langId }: IRootProps) => {
                 "telephone":"+84 258 3971 888"
               }
           `}
-        </script>
-         </Helmet>
+          </script>
+        </Helmet>
       )}
       <div className="outlet-wrapper" style={{ position: "relative" }}>
-        {/* <CssBaseline />
-        <Fabs /> */}
-        <header>header</header>
+        <CssBaseline />
+        <Fabs />
+        <Header />
         <ScrollRestoration
-        // getKey={(location, matches) => {
-        //   const paths = ["/home", "/contact, /vn/contact/ "];
-        //   return paths.includes(location.pathname)
-        //     ? // home and notifications restore by pathname
-        //       location.pathname
-        //     : // everything else by location like the browser
-        //       location.key;
-        // }}
+          getKey={(location, matches) => {
+            const paths = ["/home", "/contact, /vn/contact/ "];
+            return paths.includes(location.pathname)
+              ? // home and notifications restore by pathname
+                location.pathname
+              : // everything else by location like the browser
+                location.key;
+          }}
         />
         <Outlet />
-        <footer>footer</footer>
+        <Footer />
       </div>
     </div>
   );
