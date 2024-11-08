@@ -20,8 +20,6 @@ export default defineConfig(({ mode }) => {
     ],
 
     build: {
-      outDir: "C:/Sites/New_AGS_Site/dist",
-      emptyOutDir: true,
       rollupOptions: {
         external: ["bootstrap/dist/js/bootstrap.bundle"],
       },
