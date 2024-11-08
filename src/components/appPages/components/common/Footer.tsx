@@ -233,7 +233,7 @@ const Footer = () => {
                   fontSize: "clamp(1.25rem, calc(1.25rem + 0.5vw) ,1.75rem)",
                 }}
               >
-                {rootLang?.FooterProfile.companyName}
+                name
               </Typography>
               <Typography
                 sx={{
@@ -246,7 +246,7 @@ const Footer = () => {
                 <span className="footer-icon">
                   <LocationOnOutlinedIcon />
                 </span>
-                {rootLang?.FooterProfile.address}
+                address
               </Typography>
               <Typography
                 sx={{
