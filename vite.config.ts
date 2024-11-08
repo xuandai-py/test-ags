@@ -21,7 +21,7 @@ export default defineConfig(({ mode }) => {
 
     build: {
       rollupOptions: {
-        external: ["bootstrap/dist/js/bootstrap.bundle"],
+        external: ["./node_modules/bootstrap/dist/js/bootstrap.bundle"],
       },
     },
 
